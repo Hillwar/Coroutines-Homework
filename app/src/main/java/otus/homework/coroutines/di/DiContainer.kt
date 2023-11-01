@@ -1,5 +1,6 @@
-package otus.homework.coroutines
+package otus.homework.coroutines.di
 
+import otus.homework.coroutines.data.CatsService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -13,4 +14,8 @@ class DiContainer {
     }
 
     val service by lazy { retrofit.create(CatsService::class.java) }
+
+    companion object {
+        const val imageHost = "https://api.thecatapi.com/v1/images/search"
+    }
 }
